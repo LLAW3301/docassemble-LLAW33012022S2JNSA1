@@ -1,0 +1,13 @@
+---
+code: |
+  if candidate_age > 18 and candidate_citizen:
+    section163Eligible = True 
+  else:
+    section163Eligible = False
+---
+code: |
+  if section163Eligible:
+    endpoint['eligible']
+  else:
+    endpoint['ineligible']
+---
