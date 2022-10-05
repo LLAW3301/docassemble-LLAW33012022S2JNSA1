@@ -1,0 +1,155 @@
+---
+include: 
+  - service_directory_data2.yml
+  - service_directory_questions.yml
+---
+objects:
+  - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
+---
+mandatory: true
+code: |
+  SDJNdisplay_welcome_screen
+  
+  SDJNdisplay_final_screen
+---
+code: |
+  SDJNdisplay_welcome_screen = True
+  force_ask('SDJNwelcome_screen')
+---
+# mandatory code block drives our service directory
+question: Welcome to the South Australian Legal Services Directory
+event: SDJNwelcome_screen
+subquestion: |
+  This application displays a list of legal services provided in South Australia.
+  Please answer the questions based on one singular legal issue. If you have multiple issues please repeat the process for each individual legal issue to find relevant services.
+  
+  This process is strictly anonymous and no personal data is collected from you.
+  If at any point you need to leave the application, there will be a button labelled *exit and hide*. This button will close the application down and take you to a weather site.
+  
+  
+  
+  Please note that this application does not provide any legal advice and if you are in need of immediate aid to use relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
+  
+  
+  
+  Do you accept these terms?
+buttons:
+  - Yes I accept: continue
+  - No I do not accept: exit
+---
+question: Please confirm your submitted answers are correct
+subquestion: | 
+  
+  Question|Answer
+  ---|---
+  Locations Selected|${SDJNlocation.true_values()}
+  Age range|${SDJNage}
+  % if SDJNfamily:
+  Family issue|${SDJNfamily_2}
+  % else:
+  Family issue|No
+  % endif
+  % if SDJNcrim:
+  Criminal issue|${SDJNcrim_2}
+  % else:
+  Criminal issue|No
+  % endif
+  % if SDJNPJ:
+  Personal Injury issue|${SDJNPJ_2}
+  % else:
+  Personal Injury issue|No
+  % endif
+  % if SDJNcourts:
+  Court/ADR issue|${SDJNcourts_2}
+  % else:
+  Court/ADR issue|No
+  % endif
+  % if SDJNBUS:
+  Buisness/employment issue|${SDJNBUS_2}
+  % else:
+  Buisness/employment issue|No
+  % endif
+  % if SDJNprobate:
+  Probate issue|${SDJNprobate_2}
+  % else:
+  Probate issue|No
+  % endif
+  % if SDJNprop:
+  Property issue|${SDJNprop_2}
+  % else:
+  Property issue|No
+  % endif
+  % if SDJNcivil == 'neg':
+  Other Civil issue|Negligence
+  % elif SDJNcivil == 'trp':
+  Other Civil issue|Trespass
+  % elif SDJNcivil == 'CB':
+  Other Civil issue|Contract Breaches
+  % else:
+  Other Civil issue|no
+  % endif
+  % if SDJNother == 'env':
+  Other issue|Environment
+  % elif SDJNother == 'LGBT':
+  Other issue|LGBTQ+
+  % elif SDJNother == 'elder':
+  Other issue|Elder issues
+  % elif SDJNother == 'homeless':
+  Other issue|Homelessness
+  % elif SDJNother == 'RD':
+  Other issue|Race Discrimination
+  % elif SDJNother == 'HR':
+  Other issue|Human Rights
+  % else:
+  Other issue|No
+  % endif
+  % if SDJNATSI == 'ATSI':
+  Aboriginal or Torres Strait Islander Services?|Yes
+  % else:
+  Aboriginal or Torres Strait Islander?|No
+  % endif
+  % if SDJNDV == 'DV':
+  Domestic Violence?|Yes
+  % else:
+  Domestice Violence?|No
+  % endif
+  % if SDJNgen == 'fem':
+  Gender|female
+  % elif SDJNgen == 'not_fem':
+  Gender|male
+  % elif SDJNgen == 'oth':
+  Gender|other
+  % elif SDJNgen == 'nb':
+  Gender|nonbinary
+  % else:
+  Gender| prefer not to say
+  % endif
+  % if SDJNserv:
+  Previous services|yes
+  % else:
+  Previous services|no
+  % endif
+
+buttons:
+  - continue: continue
+  - restart: restart
+  - Exit & hide: exit
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+---
+event: SDJNdisplay_final_screen
+mandatory: true
+question: Here is a curated list of services relevant to your legal issue. 
+subquestion: |
+  ${SDJNselected_services_table}
+---
+#need to have critera here which will drive the questions being asked 
+table: SDJNselected_services_table
+rows: SDJN_serviceslist
+columns:
+  - Service Name: |
+      row_item['service_name']
+  - Phone Number: |
+      row_item['phone_number']
+  - Website link: |
+      row_item['website']
+---

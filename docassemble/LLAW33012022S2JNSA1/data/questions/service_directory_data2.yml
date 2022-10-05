@@ -1,0 +1,221 @@
+---
+variable name: SDJN_serviceslist
+use objects: True
+data:
+  - service_name: "Northern Community Legal Service"
+    location:
+      - Adelaide North
+    clients:
+      - 
+    phone_number: +61 8 8281 6911
+    email: ncls@northenlegal.ord.au
+    website: www.northernlegal.org.au
+  - service_name: "Working Women's Centre SA"
+    location:
+      - Adelaide North
+    clients:
+      - fem
+      - SDJNBUS
+    phone_number: +61 1800 652 697
+    email: reception@wwc.org.au
+    website: wwcsa.org.au
+  - service_name: "The Refugee Advocacy Service of South Australia"
+    location:
+      - Adelaide North
+    clients:
+      - 
+    phone_number: +61 401 247 224
+    email: arvin@refugeelegal.org.au
+    website: rassa.org.au
+  - service_name: "Uniting Communities Law Centre"
+    location:
+      - Adelaide North
+    clients:
+      - 
+    phone_number: +61 8 8202 5960
+    email: enquiries@unitingcommunities.org
+    website: unitingcommunities.org.au
+  - service_name: "Family Violence Legal service Aboriginal Corporation"
+    location:
+      - Northern Rural (Port Augusta)
+    clients:
+      - 
+    phone_number: 08 8641 2195
+    email: portaugusta@fvlsac.org.au
+    website: www.fvlsac.org.au
+  - service_name: "Family Violence Legal service Aboriginal Corporation"
+    location:
+      - Northern Rural (Port Lincoln)
+    clients:
+      - 
+    phone_number: 08 8683 1896
+    email: portlincoln@fvlsac.org.au
+    website: www.fvlsac.org.au
+  - service_name: "Family Violence Legal service Aboriginal Corporation"
+    location:
+      - Northern Rural (Ceduna)
+    clients:
+      - 
+    phone_number: 08 8625 3800
+    email: ceduna@fvlsac.org.au
+    website: www.fvlsac.org.au
+  - service_name: "WestSide Lawyers Port Pirie"
+    location:
+      - Northern Rural
+    clients:
+      - 
+    phone_number: +61 8 8633 3600
+    email: 
+    website: westsidelawyers.net
+  - service_name: "Riverland Community Justice Centre"
+    location:
+      - Northern Rural
+    clients:
+      - 
+    phone_number: +61 8 8582 4998
+    email: 
+    website: communityjusticesa.org.au
+  - service_name: "Aboriginal Family Violence Legal Service Inc"
+    location:
+      - Northern Rural
+    clients:
+      - 
+    phone_number: 08 8641 2195
+    email: wwcn.afvls@internode.on.net
+    website: 
+  - service_name: "Women's Legal Service SA"
+    location:
+      - Northern Rural
+    clients:
+      - 
+    phone_number: 08 8641 3366
+    email: wls@wlssa.org.au
+    website: www.wlssa.org.au
+  - service_name: "Aboriginal Legal Rights Movement"
+    location:
+      - Northern Rural
+    clients:
+      - 
+    phone_number: 08 8642 4366
+    email: info@alrm.org.au
+    website: www.alrm.org.au
+  - service_name: "Southern Community Justice Centre"
+    location:
+      - South (Christies Beach)
+    clients:
+      - 
+    phone_number: 08 8384 5222
+    email: 
+    website: communityjusticesa.org.au
+  - service_name: "Southern Community Justice Centre"
+    location:
+      - South (Mount Gambier)
+    clients:
+      - 
+    phone_number: 08 8723 1396
+    email: 
+    website: communityjusticesa.org.au
+  - service_name: "Southern Community Justice Centre"
+    location:
+      - South (Berri)
+    clients:
+      - 
+    phone_number: 08 8582 4998
+    email: 
+    website: communityjustice.org.au
+  - service_name: "Women's Legal Service (SA)"
+    location:
+      - South
+    clients:
+      - 
+    phone_number: 08 8231 8929
+    email: admin@wlssa.org.au
+    website: wlssa.org.au
+  - service_name: "Legal Services Commission"
+    location:
+      - South
+    clients:
+      - 
+    phone_number: 08 8111 5340
+    email: 
+    website: lsc.sa.gov.au
+  - service_name: "Flinders Legal Centre"
+    location:
+      - South
+    clients:
+      - 
+    phone_number: +61 8 7421 9985
+    email: legaladviceclinic@flinders.edu.au
+    website: flinderslegalcentre.net.au
+  - service_name: "Southern Vales Legal"
+    location:
+      - Southern Rural
+    clients:
+      - 
+    phone_number: 8323 9066
+    email: firms@svlegal.com
+    website: svlegal.com
+  - service_name: "Limestone Coast Community Justice Centre"
+    location:
+      - Southern Rural
+    clients:
+      - 
+    phone_number: 8723 1396
+    email: 
+    website: communityjusticesa.org.au
+  - service_name: "WestSide Lawyers Inc"
+    location:
+      - West
+    clients:
+      - 
+    phone_number: +61 8 8340 9009
+    email: 
+    website: westsidelawyers.net
+  - service_name: "Legal Services Commission Port Adelaide"
+    location:
+      - West
+    clients:
+      - 
+    phone_number: 08 8111 5460
+    email: 
+    website: lsc.sa.gov.au
+  - service_name: "Women's Legal Service (SA)"
+    location:
+      - East
+    clients:
+      - 
+    phone_number: 08 8231 8929
+    email: admin@wlssa.org.au
+    website: wlssa.org.au
+  - service_name: "Environment Defenders Office"
+    location:
+      - East
+    clients:
+      - 
+    phone_number: 1800 626 239
+    email: info@edo.org.au
+    website: edo.org.au
+  - service_name: "Legal Services Commission"
+    location:
+      - East
+    clients:
+      - 
+    phone_number: 08 8111 5555
+    email: LSC.Correspondence@lsc.sa.gov.au
+    website: lsc.sa.gov.au
+  - service_name: "South Australia Council of Community Legal Services"
+    location:
+      - East
+    clients:
+      - 
+    phone_number: 8121 4473
+    email: 
+    website: clcsa.org.au
+  - service_name: "MPS Law"
+    location:
+      - East
+    clients:
+      - 
+    phone_number: 08 7221 1690
+    email: info@mpslaw.com.au
+    website: mpslaw.com.au
