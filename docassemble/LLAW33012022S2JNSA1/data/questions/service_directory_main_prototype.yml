@@ -105,29 +105,18 @@ event: SDJNdisplay_final_screen
 question: Here is a curated list of services relevant to your legal issue. 
 subquestion: |
 
-  Question|Answer
-  ---|---
-  Age|${SDJNage}
-  Gender|${SDJNgender}
-  Locations Selected|${SDJNlocation.true_values()}
-  ATSI|${SDJNATSI}
-  DV|${SDJNDV}
-  % if SDJNfamily:
-  Family issue|${SDJNfamily_2}
-  % else:
-  Family issue|No
-  % endif
-  % if SDJNserv:
-  Prior service use|${SDJNserv_2.true_values()}
-  % else:
-  Prior service|No
-  % endif
-
   % if len(SDJNselected_services) > 0:
   ${SDJNselected_services_table}
   % else:
-  Unfortunately no services match your criteria. Please contact justice net on blah
+  Unfortunately you are not eligible for any of the services based on your answers. Please use the following details to contact JusticeNet SA with your legal issue.
   
+  JusticeNet SA|Details
+  -------------|-------
+  Website|justice.org.au
+  Email|admin@justicenet.org.au
+  Phone Number|08 8410 2280
+  Address|Pirie St, Adelaide SA 5000
+    
   % endif
   
 buttons:
