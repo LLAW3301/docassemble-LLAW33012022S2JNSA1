@@ -99,7 +99,7 @@ fields:
       - male
       - nonbinary
       - other
-      - prefer not to say: pref_no
+      - prefer not to say
 under: |
   If you select *prefer not to say* you will not see any results specific to any gender orientation
 ---

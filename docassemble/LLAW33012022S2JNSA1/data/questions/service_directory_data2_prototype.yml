@@ -42,7 +42,7 @@ data:
       - male
       - nonbinary
       - other
-      - pref_no
+      - prefer not to say
     ATSI:
       - yes
       - no
@@ -64,7 +64,7 @@ data:
       - male
       - nonbinary
       - other
-      - pref_no
+      - prefer not to say
     ATSI:
       - yes
     Domestic Violence:

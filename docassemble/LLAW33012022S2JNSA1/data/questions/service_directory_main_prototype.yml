@@ -86,8 +86,6 @@ subquestion: |
   % endif
   % if SDJNgender:
   Gender|${SDJNgender}
-  % elif SDJNgender == 'pref_no':
-  Gender| prefer not to say
   % endif
   % if SDJNserv:
   Prior service use|${SDJNserv_2.true_values()}
