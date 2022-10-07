@@ -15,20 +15,17 @@ fields:
       - Central Adelaide
       - Adelaide North
       - Adelaide South
+      - Adelaide East
+      - Adelaide West
       - Country North
       - Country South
 ---
 question: Age
 subquestion: |
-  Please select your age range.
+  Please input your age
 fields:
   - no label: SDJNage
-    datatype: radio
-    choices: 
-      - under 18
-      - 18-25
-      - 25-70
-      - 65+
+    datatype: integer
 ---
 question: Are you looking for a service that supports {families}?
 fields:
@@ -41,6 +38,7 @@ fields:
       - Marriage
       - Child Support
       - Defacto relationships
+      - Fostering
       - My issue does not concern any of these: no
     show if: SDJNfamily
 ---
@@ -56,7 +54,7 @@ fields:
       - Directors
       - Selling business
       - workers rights
-      - credit
+      - Credit
       - My issue does not concern any of these: no
     show if: SDJNBUS
 ---
@@ -79,28 +77,28 @@ fields:
   - no label: SDJNATSI
     datatype: radio
     choices:
-      - yes: ATSI
-      - No: Not_ATSI
+      - yes
+      - no
 ---
 question: Are you looking for a {domestic violence} service?
 fields:
   - no label: SDJNDV
     datatype: radio
     choices:
-      - I am seeking domestic violence services: DV
-      - I am not seeking domestic violence services: Not_DV
+      - I am seeking domestic violence services: yes
+      - I am not seeking domestic violence services: no
 under: |
    Examples of domestic violence are listed [here](https://www.voc.sa.gov.au/the-crime/types-of-crime/domestic-and-family-violence). If you urgently need domestic violence support, please call the Domestic Violence Crisis Line at 1800 800 098
 ---
 question: What {gender} do you identify as?
 fields:
-  - no label: SDJNgen
+  - no label: SDJNgender
     datatype: radio
     choices:
-      - female: fem
-      - male: not_fem
-      - nonbinary: nb
-      - other: oth
+      - female
+      - male
+      - nonbinary
+      - other
       - prefer not to say: pref_no
 under: |
   If you select *prefer not to say* you will not see any results specific to any gender orientation
@@ -112,30 +110,10 @@ fields:
  - Have you used any of the below services? You may select more then one.: SDJNserv_2
    datatype: checkboxes
    choices:
-     - "Northern Community Legal Service"
      - "Working Women's Centre SA"
-     - "The Refugee Advocacy Service of South Australia"
      - "Uniting Communities Law Centre"
      - "Family Violence Legal service Aboriginal Corporation"
-     - "Family Violence Legal service Aboriginal Corporation"
-     - "WestSide Lawyers Port Pirie"
-     - "Riverland Community Justice Centre"
-     - "Aboriginal Family Violence Legal Service Inc"
-     - "Women's Legal Service SA"
-     - "Aboriginal Legal Rights Movement"
-     - "Southern Community Justice Centre"
-     - "Women's Legal Service (SA)"
-     - "Legal Services Commission"
-     - "Flinders Legal Centre"
-     - "Southern Vales Legal"
-     - "Limestone Coast Community Justice Centre"
-     - "WestSide Lawyers Inc"
-     - "Legal Services Commission Port Adelaide"
-     - "Women's Legal Service (SA)"
-     - "Environment Defenders Office"
-     - "Legal Services Commission"
-     - "South Australia Council of Community Legal Services"
-     - "MPS Law"
+
    show if: SDJNserv    
 ---
 terms:

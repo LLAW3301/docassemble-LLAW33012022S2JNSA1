@@ -2,6 +2,7 @@
 include: 
   - service_directory_data2_prototype.yml
   - service_directory_question_prototype.yml
+  - SD_iteration_backup.yml
 ---
 objects:
   - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
@@ -68,32 +69,20 @@ subquestion: |
   % else:
   Other issue|No
   % endif
-  % if SDJNATSI == 'ATSI':
-  Aboriginal or Torres Strait Islander|Yes
-  % else:
-  Aboriginal or Torres Strait Islander?|No
+  % if SDJNATSI:
+  ATSI|${SDJNATSI}
   % endif
   % if SDJNDV == 'DV':
   Domestic Violence?|Yes
   % else:
   Domestice Violence?|No
   % endif
-  % if SDJNgen == 'fem':
-  Gender|female
-  % elif SDJNgen == 'not_fem':
-  Gender|male
-  % elif SDJNgen == 'oth':
-  Gender|other
-  % elif SDJNgen == 'nb':
-  Gender|nonbinary
-  % else:
+  % if SDJNgender:
+  Gender|${SDJNgender}
+  % elif SDJNgender == 'pref_no':
   Gender| prefer not to say
   % endif
-  % if SDJNserv:
-  Previous services|yes
-  % else:
-  Previous services|no
-  % endif
+  Prior service use|${SDJNserv_2.true_values()}
 
 buttons:
   - continue: continue
@@ -104,11 +93,26 @@ buttons:
 event: SDJNdisplay_final_screen
 question: Here is a curated list of services relevant to your legal issue. 
 subquestion: |
+
+  Question|Answer
+  ---|---
+  Age|${SDJNage}
+  Gender|${SDJNgender}
+  Locations Selected|${SDJNlocation.true_values()}
+  ATSI|${SDJNATSI}
+  DV|${SDJNDV}
+  family|${SDJNfamily_2}
+  Prior service use|${SDJNserv_2.true_values()}
+
   ${SDJNselected_services_table}
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
 ---
 #need to have critera here which will drive the questions being asked 
 table: SDJNselected_services_table
-rows: SDJN_selected_services
+rows: SDJNselected_services
 columns:
   - Service Name: |
       row_item['service_name']
@@ -116,4 +120,18 @@ columns:
       row_item['phone_number']
   - Website link: |
       row_item['website']
+  - Age Range: |
+      'From {} to {}'.format(row_item['min_age'], row_item['max_age'])
+  - Gender: |
+      row_item['gender']
+  - Locations: |
+      row_item['location']
+  - ATSI: |
+      row_item['ATSI']
+  - Domestic Violence: |
+      row_item['Domestic Violence']
+  - Family: |
+      row_item['issues']
+  - Servive: |
+      row_item['service_name']
 ---
