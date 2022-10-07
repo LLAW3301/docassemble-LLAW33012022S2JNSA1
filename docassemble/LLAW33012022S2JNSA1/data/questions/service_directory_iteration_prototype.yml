@@ -16,6 +16,7 @@ code: |
       
   #Location (working)
     SDJNlocation_ok = False
+    SDJNlocation_used = SDJNlocation.true_values()
     for SDJNa_location in SDJNlocation.true_values():
       if SDJNa_location in SDJNa_service['location']:
         SDJNlocation_ok = True
