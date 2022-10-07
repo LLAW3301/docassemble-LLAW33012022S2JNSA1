@@ -54,7 +54,7 @@ code: |
    
    #buisness test
     if SDJNBUS:
-      if (SDJNBUS_2 == 'Shareholders' or SDJNBUS_2 == 'Directors' or SDJNBUS_2 == 'Selling Business' or SDJNBUS_2 == 'workers rights' or SDJNBUS_2 == 'credit' ): 
+      if (SDJNBUS_2 == 'Shareholders' or SDJNBUS_2 == 'Directors' or SDJNBUS_2 == 'Selling business' or SDJNBUS_2 == 'workers rights' or SDJNBUS_2 == 'Credit' ): 
         if SDJNBUS_2 in SDJNa_service['issues']:
           SDJNBUS_2_ok = True
         else:
@@ -65,15 +65,15 @@ code: |
       SDJNBUS_2_ok = False
 
   #civil other test
-  if SDJNother in SDJNa_service['issues']:
-    SDJNother_ok = True
-  else:
-    SDJNother_ok = False
+    if SDJNother in SDJNa_service['issues']:
+      SDJNother_ok = True
+    else:
+      SDJNother_ok = False
   
 
   #eligibility test
     if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok:
-      if SDJNATSI_ok or SDJNDV_ok or SDJNserv_2_ok or SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok:
+      if SDJN_ATSI_ok or SDJNDV_ok or SDJNserv_2_ok or SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok:
         SDJNselected_services.append(SDJNa_service)
       
     
