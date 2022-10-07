@@ -1,0 +1,50 @@
+---
+ #Buisness test
+    if SDJNBUS_2 in SDJNa_service['Business']:
+      SDJNBUS_2_ok = True
+    else: 
+      SDJNBUS_2_ok = False
+      
+  #other test
+    if SDJNother in SDJNa_service['Other']:
+      SDJNother_ok = True
+    else:
+      SDJNother_ok = False
+---
+    
+  #Family Client test
+    if SDJNfamily_2 in SDJNa_service['Family']:
+      SDJNfamily_2_ok = True
+    else: 
+      SDJNfamily_2_ok = False
+---
+#code for endpoint 
+code: |
+  if SDJNage <= 14 and SDJNfamily_2 == ['no'] and SDJNBUS_2 == ['no'] and SDJNother == ['no']:
+    SDJN_eligible = False
+  else:
+    SDJN_eligible = True
+---
+mandatory: True
+code: |
+  if SDJN_eligible:
+    SDJNdisplay_final_screen
+  else:
+    endpoint:['ineligible']
+---
+event: endpoint['ineligible']
+question: Unfortunately based on the answers submitted you are not qualified for any avaliable service
+subquestion: |
+  Please contact Justice Net (SA) on (phone number) or go to there website at (website) for further information and aid in your legal issue.
+---
+code: |
+  CLCSAdisplay_indigenous.clear()
+  for CLCSAitem in CLCSA_Services:
+    if (
+          ( CLCSAindigenous == 'Yes' or
+            CLCSAindigenous == 'Do not wish to say' ) and 
+          ( not 'No' in CLCSAitem['indigenous'] )
+        ):
+      CLCSAdisplay_indigenous.append(CLCSAitem)
+      CLCSAitem['displayed']
+  CLCSAdisplay_indigenous.gathered = True

@@ -1,0 +1,63 @@
+---
+code: |
+  for SDJNa_service in SDJNservices:
+  #criteria tests
+  #age test (working)
+    if SDJNa_service['min_age'] <= SDJNage <= SDJNa_service['max_age']:
+      SDJNage_ok = True
+    else:
+      SDJNage_ok = False
+
+  #gender (working)
+    if SDJNgender in SDJNa_service['gender']:
+      SDJNgender_ok = True
+    else:
+      SDJNgender_ok = False
+      
+  #Location (working)
+    SDJNlocation_ok = False
+    for SDJNa_location in SDJNlocation.true_values():
+      if SDJNa_location in SDJNa_service['location']:
+        SDJNlocation_ok = True
+  
+  #ATSI (working)
+    if SDJNATSI in SDJNa_service['ATSI']:
+      SDJNATSI_ok = True
+    else:
+      SDJNATSI_ok = False
+  
+  #Domestic violence test (working)
+    if SDJNDV in SDJNa_service['Domestic Violence']:
+      SDJNDV_ok = True
+    else:
+      SDJNDV_ok = False
+            
+  #Family Client test (can't say no)
+    if (
+        ( SDJNfamily == 'yes'): 
+           if (SDJNfamily_2 == 'Divorce' or
+               SDJNfamily_2 == 'Marriage' or
+               SDJNfamily_2 == 'Child Support' or
+               SDJNfamily_2 == 'Defacto relationships' or
+               SDJNfamily_2 == 'Fostering' ): and
+          ( not 'no' in SDJNa_service['issues'] ):
+                 SDJNfamily_2_ok = True
+       ):
+         if SDJNfamily_2_ok = True:
+            SDJNfamily_ok = True
+         else:
+            SDJNfamily_ok = False
+  
+  #prior service use test (can't say no)
+    SDJNserv_2_ok = True
+    for SDJNa_serv_2 in SDJNserv_2.true_values():
+      if SDJNa_serv_2 in SDJNa_service['service_name']:
+        SDJNlocation_ok = False
+  
+  #eligibility test
+    if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok and SDJNDV_ok and SDJNfamily_ok and SDJNserv_2_ok:
+      SDJNselected_services.append(SDJNa_service)
+      
+    
+  SDJNselected_services.gathered = True
+---
