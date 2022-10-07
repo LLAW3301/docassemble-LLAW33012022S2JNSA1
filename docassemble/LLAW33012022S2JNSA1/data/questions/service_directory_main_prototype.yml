@@ -2,7 +2,7 @@
 include: 
   - service_directory_data2_prototype.yml
   - service_directory_question_prototype.yml
-  - SD_iteration_backup.yml
+  - service_directory_iteration_prototype.yml
 ---
 objects:
   - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
@@ -10,6 +10,8 @@ objects:
 mandatory: true
 code: |
   SDJNdisplay_welcome_screen
+  
+  SDJNdisplay_confirm_answers
   
   SDJNdisplay_final_screen
 ---
@@ -37,6 +39,11 @@ buttons:
   - Yes I accept: continue
   - No I do not accept: exit
 ---
+code: |
+  SDJNdisplay_confirm_answers = True
+  force_ask('SDJNconfirm_answers')
+---
+event: SDJNconfirm_answers
 question: Please confirm your submitted answers are correct
 subquestion: | 
   
@@ -82,7 +89,11 @@ subquestion: |
   % elif SDJNgender == 'pref_no':
   Gender| prefer not to say
   % endif
+  % if SDJNserv:
   Prior service use|${SDJNserv_2.true_values()}
+  % else:
+  Prior service|No
+  % endif
 
 buttons:
   - continue: continue
@@ -101,10 +112,23 @@ subquestion: |
   Locations Selected|${SDJNlocation.true_values()}
   ATSI|${SDJNATSI}
   DV|${SDJNDV}
-  family|${SDJNfamily_2}
+  % if SDJNfamily:
+  Family issue|${SDJNfamily_2}
+  % else:
+  Family issue|No
+  % endif
+  % if SDJNserv:
   Prior service use|${SDJNserv_2.true_values()}
+  % else:
+  Prior service|No
+  % endif
 
+  % if len(SDJNselected_services) > 0:
   ${SDJNselected_services_table}
+  % else:
+  Unfortunately no services match your criteria. Please contact justice net on blah
+  
+  % endif
   
 buttons:
   - Restart: restart
