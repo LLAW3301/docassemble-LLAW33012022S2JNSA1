@@ -1,0 +1,75 @@
+---
+variable name: SDJNservices
+use objects: True
+data:
+  - service_name: "Working Women's Centre SA"
+    location:
+      - Adelaide North
+    issues:
+      - Employment
+      - Shareholders
+      - Directors
+      - Selling business
+      - workers rights
+      - Credit
+    min_age: 18
+    max_age: 100
+    gender:
+      - female
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 1800 652 697
+    email: reception@wwc.org.au
+    website: wwcsa.org.au
+  - service_name: "Uniting Communities Law Centre"
+    location:
+      - Adelaide North
+    issues:
+      - Fostering
+      - Child Support
+      - Credit
+      - Elder rights
+      - Disability
+      - Homelessness
+    min_age: 15
+    max_age: 100
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8202 5960
+    email: enquiries@unitingcommunities.org
+    website: unitingcommunities.org.au
+  - service_name: "Family Violence Legal service Aboriginal Corporation"
+    location:
+      - Country North
+    issues:
+      - Child Support
+      - Fostering
+    min_age: 18
+    max_age: 100
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+    Domestic Violence:
+      - yes
+      - no
+    phone_number: 08 8641 2195
+    email: portaugusta@fvlsac.org.au
+    website: www.fvlsac.org.au
+---

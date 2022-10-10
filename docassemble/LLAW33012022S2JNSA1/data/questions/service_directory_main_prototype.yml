@@ -1,0 +1,134 @@
+---
+include: 
+  - service_directory_data2_prototype.yml
+  - service_directory_question_prototype.yml
+  - service_directory_iteration_prototype.yml
+---
+objects:
+  - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
+---
+mandatory: true
+code: |
+  SDJNdisplay_welcome_screen
+  
+  SDJNdisplay_confirm_answers
+  
+  SDJNdisplay_final_screen
+---
+code: |
+  SDJNdisplay_welcome_screen = True
+  force_ask('SDJNwelcome_screen')
+---
+question: Welcome to the South Australian Legal Services Directory
+event: SDJNwelcome_screen
+subquestion: |
+  This application displays a list of legal services provided in South Australia.
+  Please answer the questions based on one singular legal issue. If you have multiple issues please repeat the process for each individual legal issue to find relevant services.
+  
+  This process is strictly anonymous and no personal data is collected from you.
+  If at any point you need to leave the application, there will be a button labelled *exit and hide*. This button will close the application down and take you to a weather site.
+  
+  
+  
+  Please note that this application does not provide any legal advice and if you are in need of immediate aid to use relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
+  
+  
+  
+  Do you accept these terms?
+buttons:
+  - Yes I accept: continue
+  - No I do not accept: exit
+---
+code: |
+  SDJNdisplay_confirm_answers = True
+  force_ask('SDJNconfirm_answers')
+---
+event: SDJNconfirm_answers
+question: Please confirm your submitted answers are correct
+subquestion: | 
+  
+  Question|Answer
+  ---|---
+  Locations Selected|${SDJNlocation.true_values()}
+  Age range|${SDJNage}
+  % if SDJNfamily:
+  Family issue|${SDJNfamily_2}
+  % else:
+  Family issue|No
+  % endif
+  % if SDJNBUS:
+  Buisness/employment issue|${SDJNBUS_2}
+  % else:
+  Buisness/employment issue|No
+  % endif
+  % if SDJNother == 'env':
+  Other issue|Environment
+  % elif SDJNother == 'LGBT':
+  Other issue|LGBTQ+
+  % elif SDJNother == 'elder':
+  Other issue|Elder issues
+  % elif SDJNother == 'homeless':
+  Other issue|Homelessness
+  % elif SDJNother == 'RD':
+  Other issue|Race Discrimination
+  % elif SDJNother == 'HR':
+  Other issue|Human Rights
+  % else:
+  Other issue|No
+  % endif
+  % if SDJNATSI:
+  ATSI|${SDJNATSI}
+  % endif
+  % if SDJNDV == 'DV':
+  Domestic Violence?|Yes
+  % else:
+  Domestice Violence?|No
+  % endif
+  % if SDJNgender:
+  Gender|${SDJNgender}
+  % endif
+  % if SDJNserv:
+  Prior service use|${SDJNserv_2.true_values()}
+  % else:
+  Prior service|No
+  % endif
+
+buttons:
+  - continue: continue
+  - restart: restart
+  - Exit & hide: exit
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+---
+event: SDJNdisplay_final_screen
+question: Here is a curated list of services relevant to your legal issue. 
+subquestion: |
+
+  % if len(SDJNselected_services) > 0:
+  ${SDJNselected_services_table}
+  % else:
+  Unfortunately you are not eligible for any of the services based on your answers. Please use the following details to contact JusticeNet SA with your legal issue.
+  
+  JusticeNet SA|Details
+  -------------|-------
+  Website|justice.org.au
+  Email|admin@justicenet.org.au
+  Phone Number|08 8410 2280
+  Address|Pirie St, Adelaide SA 5000
+    
+  % endif
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
+---
+#need to have critera here which will drive the questions being asked 
+table: SDJNselected_services_table
+rows: SDJNselected_services
+columns:
+  - Service Name: |
+      row_item['service_name']
+  - Phone Number: |
+      row_item['phone_number']
+  - Website link: |
+      row_item['website']
+---
