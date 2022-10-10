@@ -131,18 +131,4 @@ columns:
       row_item['phone_number']
   - Website link: |
       row_item['website']
-  - Age Range: |
-      'From {} to {}'.format(row_item['min_age'], row_item['max_age'])
-  - Gender: |
-      row_item['gender']
-  - Locations: |
-      row_item['location']
-  - ATSI: |
-      row_item['ATSI']
-  - Domestic Violence: |
-      row_item['Domestic Violence']
-  - Family: |
-      row_item['issues']
-  - Servive: |
-      row_item['service_name']
 ---

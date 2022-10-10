@@ -72,8 +72,8 @@ code: |
   
 
   #eligibility test
-    if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok:
-      if SDJN_ATSI_ok or SDJNDV_ok or SDJNserv_2_ok or SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok:
+    if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok and SDJNDV_ok and SDJNserv_2_ok:
+      if SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok:
         SDJNselected_services.append(SDJNa_service)
       
     
