@@ -1,0 +1,81 @@
+---
+code: |
+  for SDJNa_service in SDJNservices:
+  #criteria tests
+  #age test (working)
+    if SDJNa_service['min_age'] <= SDJNage <= SDJNa_service['max_age']:
+      SDJNage_ok = True
+    else:
+      SDJNage_ok = False
+
+  #gender (working)
+    if SDJNgender in SDJNa_service['gender']:
+      SDJNgender_ok = True
+    else:
+      SDJNgender_ok = False
+      
+  #Location (working)
+    SDJNlocation_ok = False
+    SDJNlocation_used = SDJNlocation.true_values()
+    for SDJNa_location in SDJNlocation.true_values():
+      if SDJNa_location in SDJNa_service['location']:
+        SDJNlocation_ok = True
+  
+  #ATSI (working)
+    if SDJNATSI in SDJNa_service['ATSI']:
+      SDJNATSI_ok = True
+    else:
+      SDJNATSI_ok = False
+  
+  #Domestic violence test (working)
+    if SDJNDV in SDJNa_service['Domestic Violence']:
+      SDJNDV_ok = True
+    else:
+      SDJNDV_ok = False
+            
+  #Family Client test 
+    if SDJNfamily:
+      if (SDJNfamily_2 == 'Divorce' or SDJNfamily_2 == 'Marriage' or SDJNfamily_2 == 'Child Support' or SDJNfamily_2 == 'Defacto relationships' or SDJNfamily_2 == 'Fostering' ): 
+        if SDJNfamily_2 in SDJNa_service['issues']:
+          SDJNfamily_2_ok = True
+        else:
+          SDJNfamily_2_ok = False
+      else:
+        SDJNfamily_2_ok = False
+    else:
+      SDJNfamily_2_ok = False
+  
+  #prior service use test 
+    SDJNserv_2_ok = True
+    if SDJNserv:
+      for SDJNa_serv_2 in SDJNserv_2.true_values():
+        if SDJNa_serv_2 in SDJNa_service['service_name']:
+          SDJNserv_2_ok = False
+   
+   #buisness test
+    if SDJNBUS:
+      if (SDJNBUS_2 == 'Shareholders' or SDJNBUS_2 == 'Directors' or SDJNBUS_2 == 'Selling business' or SDJNBUS_2 == 'workers rights' or SDJNBUS_2 == 'Credit' ): 
+        if SDJNBUS_2 in SDJNa_service['issues']:
+          SDJNBUS_2_ok = True
+        else:
+          SDJNBUS_2_ok = False
+      else:
+        SDJNBUS_2_ok = False
+    else:
+      SDJNBUS_2_ok = False
+
+  #civil other test
+    if SDJNother in SDJNa_service['issues']:
+      SDJNother_ok = True
+    else:
+      SDJNother_ok = False
+  
+
+  #eligibility test
+    if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok and SDJNDV_ok and SDJNserv_2_ok:
+      if SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok:
+        SDJNselected_services.append(SDJNa_service)
+      
+    
+  SDJNselected_services.gathered = True
+---

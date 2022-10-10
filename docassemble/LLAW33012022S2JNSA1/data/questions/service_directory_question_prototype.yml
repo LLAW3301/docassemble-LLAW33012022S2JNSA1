@@ -1,0 +1,130 @@
+---
+#questions that will supply data
+#tagging system will need to be applied to services e.g. services for domestic violence tagged DV etc
+#using event end screens?
+---
+question: Location
+subquestion: |
+  Please select the location where you wish to see potential services in.
+  
+  You may choose more then one location.
+fields:
+  - no label: SDJNlocation
+    datatype: checkboxes
+    choices: 
+      - Central Adelaide
+      - Adelaide North
+      - Adelaide South
+      - Adelaide East
+      - Adelaide West
+      - Country North
+      - Country South
+---
+question: Age
+subquestion: |
+  Please input your age
+fields:
+  - no label: SDJNage
+    datatype: integer
+---
+question: Are you looking for a service that supports {families}?
+fields:
+  - no label: SDJNfamily
+    datatype: yesnoradio
+  - Does your issue concern any of the below?: SDJNfamily_2
+    datatype: radio
+    choices:
+      - Divorce
+      - Marriage
+      - Child Support
+      - Defacto relationships
+      - Fostering
+      - My issue does not concern any of these: no
+    show if: SDJNfamily
+---
+question: Does your issue concern {Buisness or Employment}?
+fields:
+  - no label: SDJNBUS
+    datatype: yesnoradio
+  - Does your issue concern any of the issues below?: SDJNBUS_2
+    datatype: radio
+    choices:     
+      - Employment
+      - Shareholders
+      - Directors
+      - Selling business
+      - workers rights
+      - Credit
+      - My issue does not concern any of these: no
+    show if: SDJNBUS
+---
+question: Does your issue concern any of the issues below?
+fields:
+  - no label: SDJNother
+    datatype: radio
+    choices:     
+      - Environment
+      - LGBTQ+ issues
+      - Elder Rights
+      - Homelessness
+      - Race discrimination
+      - Human rights
+      - Disability
+      - My issue does not concern any of these: no
+---
+Question: Do you identify as Aboriginal or Torres Strait Islander (ATSI) ?
+fields: 
+  - no label: SDJNATSI
+    datatype: radio
+    choices:
+      - yes
+      - no
+---
+question: Are you looking for a {domestic violence} service?
+fields:
+  - no label: SDJNDV
+    datatype: radio
+    choices:
+      - I am seeking domestic violence services: yes
+      - I am not seeking domestic violence services: no
+under: |
+   Examples of domestic violence are listed [here](https://www.voc.sa.gov.au/the-crime/types-of-crime/domestic-and-family-violence). If you urgently need domestic violence support, please call the Domestic Violence Crisis Line at 1800 800 098
+---
+question: What {gender} do you identify as?
+fields:
+  - no label: SDJNgender
+    datatype: radio
+    choices:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+under: |
+  If you select *prefer not to say* you will not see any results specific to any gender orientation
+---
+question: Have you ever used any services for your current legal issue?
+fields:
+ - no label: SDJNserv
+   datatype: yesnoradio
+ - Have you used any of the below services? You may select more then one.: SDJNserv_2
+   datatype: checkboxes
+   choices:
+     - "Working Women's Centre SA"
+     - "Uniting Communities Law Centre"
+     - "Family Violence Legal service Aboriginal Corporation"
+
+   show if: SDJNserv    
+---
+terms:
+  families: |
+    Family refers to areas of law that affect family units including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see avaliable selections.
+  Buisness or Employment: |
+    This includes workplace issues for both employees, buisness owners, and shareholders.
+  prefer not to say: |
+   If selected no services specific to gender will appear.
+  domestic violence: |
+    Domestic violence is a pattern of abusive behaviour by one person against another within a marriage or dating couple, or within a family across generations.
+  gender: |
+    Gender refers to your perception of yourself in relation to characteristics and societal perception.
+---
