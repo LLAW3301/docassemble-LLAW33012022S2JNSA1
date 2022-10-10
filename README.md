@@ -1,9 +1,8 @@
-# docassemble.LLAW33012022S2JNSA1
+# docassemble.JNSA1
 
 A docassemble extension.
 
 ## Author
 
-Lauren Docking, dock0013@flinders.edu.au 
-Beti Waldron, wald0084@flinders.edu.au
+Betelihem Waldron, wald0084@flinders.edu.au
 
