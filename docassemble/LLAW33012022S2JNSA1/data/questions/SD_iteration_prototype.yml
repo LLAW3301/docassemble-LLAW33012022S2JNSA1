@@ -1,0 +1,23 @@
+  #eligibility test - attempt 2#Append the service to the list of services
+if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok:
+    if SDJNfamily:
+        for SDJNfamily in SDJNfamily_2.true_values():
+            if SDJNfamily in SDJNa_service[‘Issues’]:
+ SDJNselected_services.append(SDJNa_service)
+      
+    
+  SDJNselected_services.gathered = True
+  
+   #Family Client test (can't say no)
+    if (
+        ( SDJNfamily == 'yes' or
+            SDJNfamily_2 == 'Divorce' or
+            SDJNfamily_2 == 'Marriage' or
+          SDJNfamily_2 == 'Child Support' or
+          SDJNfamily_2 == 'Defacto relationships' or
+          SDJNfamily_2 == 'Fostering' ):  and 
+        ( not 'no' in SDJNa_service['issues'] )
+       ):
+      SDJNfamily_ok = True
+    else:
+      SDJNfamily_ok = False
