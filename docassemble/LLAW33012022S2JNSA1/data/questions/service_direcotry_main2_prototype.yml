@@ -2,10 +2,25 @@
 features:
   css: SDJN_styles.css
   table width: 85
+  debug: False
 ---
 metadata:
   show login: false
   exit url: http://www.bom.gov.au
+  title: |
+    Service Directory JusticeNet SA
+  short title: |
+    Service Directory
+  description: |
+    A service directory app for JusticeNet SA
+  authors: 
+    - name: Benjamin Wiersema
+    - name: Beti Waldron
+    - name: Lauren Docking
+    - name: Jewel-Lee Somerville
+    - name: Lachie Stiffle
+    - name: Zach Marshall
+  organisation: Flinders University
 ---
 include: 
   - service_directory_data2_prototype.yml
@@ -134,4 +149,18 @@ columns:
       row_item['website']
   - Age Range: |
       'From {} to {}'.format(row_item['min_age'], row_item['max_age'])
+---
+# Modify the post default screen part to attribute work to Flinders and your client
+# Remember to replace XXXX with your client's name.
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with JusticeNet SA
+    </i></small></cite>
+    </div>
+    </div>
 ---
