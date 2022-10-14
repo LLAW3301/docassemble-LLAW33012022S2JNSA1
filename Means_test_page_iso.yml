@@ -1,0 +1,51 @@
+---
+mandatory: true
+Question: Eligibility 
+event: SDJNdisplay_means_test_screen 
+subquestion: |
+  The services this application may direct you to have
+  funding constraints and provide their services only to
+  those who are eligible. 
+  
+  Eligibility for these services is determined by a means
+  test. 
+  
+  The means test assesses:
+  
+  1. Income
+     * this applies to your disposlable income, which is 
+    the  income remaining after tax deductions, housing 
+    costs, and child costs, etc. 
+        
+     * If your disposable income is below the poverty 
+     line,  you are likely to be eligible. 
+        
+     * The key poverty line brackets for the 2022 March
+     according to the Melbourne Insitute of Applied   
+     Economic and Social Research the  are shown below:
+        
+        * single: $411.38 - $611
+        * couple: 598.07 - 817.71
+        * couple with 2 dependents: $888.78 - $1148.15
+          
+  2. Assets
+     
+    * An asset can be defined as a resource with economic
+    value. For the purposes of the means tests, everyday 
+    items of an average person such as, clothing, tools of 
+    trade, furniture, house or car, are not included. 
+   
+  This does not guarentee your eligbility for these 
+  services 
+   
+  If you do not meet these requirements please visit the 
+  Law Society of SA to find another service at:  
+  https://referral.lawsocietysa.asn.au/start
+   
+  If you believe you are eligible, press continue to 
+  start.
+
+buttons: 
+  - Continue: continue
+  - Exit: exit
+---
