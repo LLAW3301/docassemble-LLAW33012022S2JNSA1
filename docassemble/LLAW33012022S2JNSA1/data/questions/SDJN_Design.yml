@@ -34,7 +34,7 @@
 
 /* This sets the colour of the 'Source' link in the navbar */
 .navbar .nav-item a{
-    color: rgb(0,0,0) !important;
+    color: rgb(255,255,255) !important;
 }
 
 /* dropdown-menu manages the right-hand menu (where we access the Playground

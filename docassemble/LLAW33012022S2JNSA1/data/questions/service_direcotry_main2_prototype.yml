@@ -1,6 +1,7 @@
 ---
 features:
   css: SDJN_styles.css
+  table: 85
 ---
 metadata:
   show login: false
