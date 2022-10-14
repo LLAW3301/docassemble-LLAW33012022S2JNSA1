@@ -1,4 +1,11 @@
 ---
+features:
+  css: SDJN_styles.css
+---
+metadata:
+  show login: false
+  exit url: http://www.bom.gov.au
+---
 include: 
   - service_directory_data2_prototype.yml
   - service_directory_question_prototype.yml
