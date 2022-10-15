@@ -20,15 +20,15 @@ code: |
 question: Welcome to the South Australian Legal Services Directory
 event: SDJNwelcome_screen
 subquestion: |
-  This application displays a list of legal services provided in South Australia.
-  Please answer the questions based on one singular legal issue. If you have multiple issues please repeat the process for each individual legal issue to find relevant services.
+  This application will give you a list of South Australian legal assistance services that could help with your legal issue(s). 
+  If you have mutiple legal issues, please repeat the process for each individual issue to allow us to find relevant services.
   
-  This process is strictly anonymous and no personal data is collected from you.
-  If at any point you need to leave the application, there will be a button labelled *exit and hide*. This button will close the application down and take you to a weather site.
+  This process is completely anonymous; none of your personal data is collected or stored.
+  If at any point you need to leave the application, there is an *exit and hide* button. This button will close the application and take you to a weather site.
   
   
   
-  Please note that this application does not provide any legal advice and if you are in need of immediate aid to use relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
+ *this application does not provide any legal advice. If you are in need of immediate legal aid please use relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
   
   
   
@@ -37,7 +37,7 @@ buttons:
   - Yes I accept: continue
   - No I do not accept: exit
 ---
-question: Please confirm your submitted answers are correct
+question: Please confirm what you have clicked is correct.
 subquestion: | 
   
   Question|Answer
@@ -138,7 +138,7 @@ buttons:
 ---
 event: SDJNdisplay_final_screen
 mandatory: true
-question: Here is a curated list of services relevant to your legal issue. 
+question: Here is a list of services relevant to your legal issue. 
 subquestion: |
   ${SDJNselected_services_table}
 ---
