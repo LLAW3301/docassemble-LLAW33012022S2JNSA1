@@ -48,7 +48,7 @@ question: Do you want help with a criminal matter
 fields:
   - no label: SDJNcrim
     datatype: yesnoradio
-  - Do you want help with any of the crimincal issues below?: SDJNcrim_2
+  - Do you want help with any of the crimincal issues listed below?: SDJNcrim_2
     datatype: radio
     choices:
       - Road offenes: RO_OF
@@ -96,7 +96,7 @@ question: Do you want help with a {Buisness or Employment} matter?
 fields:
   - no label: SDJNBUS
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNBUS_2
+  - Do you want help with any of the issues listed below?: SDJNBUS_2
     datatype: radio
     choices:     
       - Employment: empy
@@ -111,7 +111,7 @@ question: Do you want help with a {probate} matter?
 fields:
   - no label: SDJNprobate
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNprobate_2
+  - Do you want help with any of the issues listed below?: SDJNprobate_2
     datatype: radio
     choices:     
       - wills
@@ -157,7 +157,7 @@ fields:
       - Homelessness: homeless
       - Race discrimination: RD
       - Human rights: HR
-      - My issue does not concern any of these: not_other
+      - My issue is not any of these: not_other
 ---
 Question: What gender do you identify as?
 fields: 
@@ -236,9 +236,9 @@ fields:
 ---
 terms:
   families: |
-    Family refers to areas of law that affect family units including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see avaliable selections.
+    Family refers to areas of law that affect family units, including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see avaliable selections.
   personal injury: |
-    Personal injury refers to physical ailment occuring from an external force such as another person, surroundings, and other forms.
+    Personal injury refers to physical ailment occuring from an external force, such as another person, surroundings, and other forms.
   Courts or Dispute Resolution: |
     This refers to issues relating to the functions of courts including representation, documents, the ways courts function, and alternative forms of dispute resolution.
   Buisness or Employment: |
