@@ -19,14 +19,14 @@ data:
     phone_number: +61 1800 652 697
     email: reception@wwc.org.au
     website: wwcsa.org.au
-  - service_name: "The Refugee Advocacy Service of South Australia"
+  - service_name: "Refugee Legal"
     location:
       - Adelaide North
     clients:
       - 
     phone_number: +61 401 247 224
     email: arvin@refugeelegal.org.au
-    website: rassa.org.au
+    website: refugeelegal.org.au
   - service_name: "Uniting Communities Law Centre"
     location:
       - Adelaide North
