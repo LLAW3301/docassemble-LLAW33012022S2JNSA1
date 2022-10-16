@@ -1,8 +1,8 @@
 ---
 include: 
-  - service_directory_data2_prototype.yml
-  - service_directory_question_prototype.yml
-  - service_directory_iteration_prototype.yml
+  - service_directory_data_final.yml
+  - service_directory_questions_final.yml
+  - service_directory_iteration_final.yml
 ---
 objects:
   - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
@@ -23,7 +23,9 @@ question: Welcome to the South Australian Legal Services Directory
 event: SDJNwelcome_screen
 subquestion: |
   This application displays a list of legal services provided in South Australia.
-  Please answer the questions based on one singular legal issue. If you have multiple issues please repeat the process for each individual legal issue to find relevant services.
+  **Please answer the questions based on one singular legal issue.** If you have multiple issues please *repeat* the process for each individual legal issue to find relevant services.
+  
+  If you are unsure whether a question is relevant to your issue, click on the word/s in green to find out more information or press yes to see avaliable options.
   
   This process is strictly anonymous and no personal data is collected from you.
   If at any point you need to leave the application, there will be a button labelled *exit and hide*. This button will close the application down and take you to a weather site.
@@ -50,14 +52,56 @@ subquestion: |
   Question|Answer
   ---|---
   Locations Selected|${SDJNlocation.true_values()}
-  Age range|${SDJNage}
+  % if SDJNage == 'child':
+  Age Range|Under 16
+  % elif SDJNage == 'youth':
+  Age Range|16 to 18
+  % elif SDJNage == 'adult':
+  Age Range|18 to 65
+  % else:
+  Age Range|65+
+  % endif
   % if SDJNfamily:
-  Family issue|${SDJNfamily_2}
+  Family issue|${SDJNfamily_2.true_values()}
   % else:
   Family issue|No
   % endif
+  % if SDJNcrim:
+  Criminal issue|${SDJNcrim_2.true_values()}
+  % else:
+  Criminal issue|No
+  % endif
+  % if SDJNprobate:
+  Probate issue|${SDJNprobate_2.true_values()}
+  % else:
+  Probate issue|No
+  % endif
+  % if SDJNprop:
+  Property issue|${SDJNprop_2.true_values()}
+  % else:
+  Property issue|No
+  % endif
+  % if SDJNcivil == 'Negligence':
+  Other civil issue|Negligence
+  % elif SDJNcivil == 'Trespass':
+  Other civil issue|Trespass
+  % elif SDJNcivil == 'Contract Breaches':
+  Other civil issue|Contract breaches
+  % else:
+  Other civil issues|no
+  % endif
+  % if SDJNPJ:
+  Personal Injury issue|${SDJNPJ_2.true_values()}
+  % else:
+  Personal Injury issue|No
+  % endif
+  % if SDJNcourts:
+  Courts or ADR issue|${SDJNcourts_2.true_values()}
+  % else:
+  Courts or ADR issue|No
+  % endif
   % if SDJNBUS:
-  Buisness/employment issue|${SDJNBUS_2}
+  Buisness/employment issue|${SDJNBUS_2.true_values()}
   % else:
   Buisness/employment issue|No
   % endif
