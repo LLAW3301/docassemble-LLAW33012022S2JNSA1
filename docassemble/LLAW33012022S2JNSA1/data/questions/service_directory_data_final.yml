@@ -2,163 +2,6 @@
 variable name: SDJNservices
 use objects: True
 data:
-  - service_name: "Northern Community Legal Service"
-    location:
-      - Adelaide North
-    issues:
-      - 
-    age:
-      - adult 
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 8 8281 6911
-    email: ncls@northenlegal.ord.au
-    website: www.northernlegal.org.au
-  - service_name: "Working Women's Centre SA"
-    location:
-      - Adelaide North
-    issues:
-      - Employment
-      - Shareholders
-      - Directors
-      - Selling business
-      - workers rights
-      - Credit
-    age:
-      - adult
-    gender:
-      - female
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 1800 652 697
-    email: reception@wwc.org.au
-    website: wwcsa.org.au
-  - service_name: "The Refugee Advocacy Service of South Australia"
-    location:
-      - Adelaide North
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 401 247 224
-    email: arvin@refugeelegal.org.au
-    website: rassa.org.au
-  - service_name: "Uniting Communities Law Centre"
-    location:
-      - Adelaide North
-    issues:
-      - Fostering
-      - Child Support
-      - Credit
-      - Elder rights
-      - Disability
-      - Homelessness
-    age:
-      - child
-      - youth
-      - adult
-      - elder
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 8 8202 5960
-    email: enquiries@unitingcommunities.org
-    website: unitingcommunities.org.au
-  - service_name: "Family Violence Legal service Aboriginal Corporation"
-    location:
-      - Country North
-    issues:
-      - Child Support
-      - Fostering
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-    Domestic Violence:
-      - yes
-      - no
-    phone_number: 08 8641 2195/08 8683 1896/08 8625 3800
-    email: portaugusta@fvlsac.org.au/portlincoln@fvlsac.org.au/ceduna@fvlsac.org.auceduna@fvlsac.org.au
-    website: www.fvlsac.org.au
-  - service_name: "WestSide Lawyers Port Pirie"
-    location:
-      - Country North
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 8 8633 3600
-    email: 
-    website: westsidelawyers.net
-  - service_name: "Riverland Community Justice Centre"
-    location:
-      - Country North
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 8 8582 4998
-    email: 
-    website: communityjusticesa.org.au
   - service_name: "Aboriginal Family Violence Legal Service Inc"
     location:
       - Country North
@@ -179,23 +22,6 @@ data:
     phone_number: 08 8641 2195
     email: wwcn.afvls@internode.on.net
     website: 
-  - service_name: "Women's Legal Service SA"
-    location:
-      - Country North
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 08 8641 3366
-    email: wls@wlssa.org.au
-    website: www.wlssa.org.au
   - service_name: "Aboriginal Legal Rights Movement"
     location:
       - Country North
@@ -216,170 +42,6 @@ data:
     phone_number: 08 8642 4366
     email: info@alrm.org.au
     website: www.alrm.org.au
-  - service_name: "Southern Community Justice Centre"
-    location:
-      - Country South
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 08 8384 5222/08 8723 1396/08 8582 4998
-    email: NA
-    website: communityjusticesa.org.au
-  - service_name: "Women's Legal Service (SA)"
-    location:
-      - Central Adelaide
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 08 8231 8929
-    email: admin@wlssa.org.au
-    website: wlssa.org.au
-  - service_name: "Flinders Legal Centre"
-    location:
-      - Adelaide South
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - 
-    Domestic Violence:
-      - no
-    phone_number: +61 8 7421 9985
-    email: legaladviceclinic@flinders.edu.au
-    website: flinderslegalcentre.net.au
-  - service_name: "Limestone Coast Community Justice Centre"
-    location:
-      - Country South
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 8723 1396
-    email: 
-    website: communityjusticesa.org.au
-  - service_name: "WestSide Lawyers Inc"
-    location:
-      - Adelaide West
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: +61 8 8340 9009
-    email: 
-    website: westsidelawyers.net
-  - service_name: "Legal Services Commission Port Adelaide"
-    location:
-      - Adelaide West
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 08 8111 5460
-    email: 
-    website: lsc.sa.gov.au
-  - service_name: "Environment Defenders Office"
-    location:
-      - East
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 1800 626 239
-    email: info@edo.org.au
-    website: edo.org.au
-  - service_name: "Legal Services Commission"
-    location:
-      - Adelaide East
-      - Central Adelaide
-    issues:
-      - 
-    age:
-      - adult
-    gender:
-      - female
-      - male
-      - nonbinary
-      - other
-      - prefer not to say
-    ATSI:
-      - yes
-      - no
-    Domestic Violence:
-      - no
-    phone_number: 08 8111 5555
-    email: LSC.Correspondence@lsc.sa.gov.au
-    website: lsc.sa.gov.au
   - service_name: "Aboriginal Legal Rights Movement"
     location:
       - Adelaide North
@@ -526,6 +188,69 @@ data:
     phone_number: 08 8202 5960
     email: 
     website: lsc.sa.gov.au
+  - service_name: "Environment Defenders Office"
+    location:
+      - East
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 1800 626 239
+    email: info@edo.org.au
+    website: edo.org.au
+  - service_name: "Family Violence Legal service Aboriginal Corporation"
+    location:
+      - Country North
+    issues:
+      - Child Support
+      - Fostering
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+    Domestic Violence:
+      - yes
+      - no
+    phone_number: 08 8641 2195/08 8683 1896/08 8625 3800
+    email: portaugusta@fvlsac.org.au/portlincoln@fvlsac.org.au/ceduna@fvlsac.org.auceduna@fvlsac.org.au
+    website: www.fvlsac.org.au
+  - service_name: "Flinders Legal Centre"
+    location:
+      - Adelaide South
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - 
+    Domestic Violence:
+      - no
+    phone_number: +61 8 7421 9985
+    email: legaladviceclinic@flinders.edu.au
+    website: flinderslegalcentre.net.au
   - service_name: "Law Society Legal Advisory Service"
     location:
       - Central Adelaide
@@ -568,6 +293,70 @@ data:
     phone_number: 08 8229 0263
     email: annie.macrae@lawsocietysa.asn.au
     website: lawsocietysa.asn.au
+  - service_name: "Legal Services Commission Port Adelaide"
+    location:
+      - Adelaide West
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 08 8111 5460
+    email: 
+    website: lsc.sa.gov.au
+  - service_name: "Legal Services Commission"
+    location:
+      - Adelaide East
+      - Central Adelaide
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 08 8111 5555
+    email: LSC.Correspondence@lsc.sa.gov.au
+    website: lsc.sa.gov.au
+  - service_name: "Limestone Coast Community Justice Centre"
+    location:
+      - Country South
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 8723 1396
+    email: 
+    website: communityjusticesa.org.au
   - service_name: "Men's Legal Service"
     location:
       - Central Adelaide
@@ -585,6 +374,48 @@ data:
     phone_number: 1800 463 675
     email: 
     website: menslegalservice.org.au
+  - service_name: "Northern Community Legal Service"
+    location:
+      - Adelaide North
+    issues:
+      - 
+    age:
+      - adult 
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8281 6911
+    email: ncls@northenlegal.ord.au
+    website: www.northernlegal.org.au
+  - service_name: "Refugee Legal"
+    location:
+      - Adelaide North
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 401 247 224
+    email: arvin@refugeelegal.org.au
+    website: rassa.org.au
   - service_name: "RentRight SA"
     location:
       - Central Adelaide
@@ -612,6 +443,48 @@ data:
     phone_number: 1800 060 462
     email: 
     website: syc.net.au
+  - service_name: "Riverland Community Justice Centre"
+    location:
+      - Country North
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8582 4998
+    email: 
+    website: communityjusticesa.org.au
+  - service_name: "Southern Community Justice Centre"
+    location:
+      - Country South
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 08 8384 5222/08 8723 1396/08 8582 4998
+    email: NA
+    website: communityjusticesa.org.au
   - service_name: "UniSA Legal Advice Clinic"
     location:
       - Central Adelaide
@@ -633,6 +506,111 @@ data:
     phone_number: 08 8302 7436
     email: 
     website: unisa.edu.au
+  - service_name: "Uniting Communities Law Centre"
+    location:
+      - Adelaide North
+    issues:
+      - Fostering
+      - Child Support
+      - Credit
+      - Elder rights
+      - Disability
+      - Homelessness
+    age:
+      - child
+      - youth
+      - adult
+      - elder
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8202 5960
+    email: enquiries@unitingcommunities.org
+    website: unitingcommunities.org.au
+  - service_name: "WestSide Lawyers Inc"
+    location:
+      - Adelaide West
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8340 9009
+    email: 
+    website: westsidelawyers.net
+  - service_name: "WestSide Lawyers Port Pirie"
+    location:
+      - Country North
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+      - male
+      - nonbinary
+      - other
+      - prefer not to say
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 8 8633 3600
+    email: 
+    website: westsidelawyers.net
+  - service_name: "Women's Legal Service SA"
+    location:
+      - Country North
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 08 8641 3366
+    email: wls@wlssa.org.au
+    website: www.wlssa.org.au
+  - service_name: "Women's Legal Service (SA)"
+    location:
+      - Central Adelaide
+    issues:
+      - 
+    age:
+      - adult
+    gender:
+      - female
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: 08 8231 8929
+    email: admin@wlssa.org.au
+    website: wlssa.org.au
   - service_name: "Workers Compensation Service"
     location:
       - Adelaide South
@@ -654,6 +632,28 @@ data:
     phone_number: 8279 2220
     email: workerscomp@saunion.org.au
     website: saunions.com.au
+  - service_name: "Working Women's Centre SA"
+    location:
+      - Adelaide North
+    issues:
+      - Employment
+      - Shareholders
+      - Directors
+      - Selling business
+      - workers rights
+      - Credit
+    age:
+      - adult
+    gender:
+      - female
+    ATSI:
+      - yes
+      - no
+    Domestic Violence:
+      - no
+    phone_number: +61 1800 652 697
+    email: reception@wwc.org.au
+    website: refugeelegal.org.au
   - service_name: "Young Workers Legal Service"
     location:
       - Adelaide South
