@@ -1,8 +1,16 @@
 ---
+# Source for image used within header.
+objects:
+  - HeaderLogo: DAStaticFile.using(filename='JNSA_purplewhite_logo.png')
+---
+mandatory: true
+code: |
+  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 70px; alt=''">')
+---
 features:
   css: SDJN_styles.css
-  table width: 85
   debug: False
+  table width: 85
 ---
 metadata:
   show login: false
@@ -10,9 +18,9 @@ metadata:
   title: |
     Service Directory JusticeNet SA
   short title: |
-    Service Directory
+    Service Directory JusticeNet SA
   description: |
-    A service directory app for JusticeNet SA
+    A Service Directory App for JusticeNet SA
   authors: 
     - name: Benjamin Wiersema
     - name: Beti Waldron
@@ -45,17 +53,18 @@ code: |
 question: Welcome to the South Australian Legal Services Directory
 event: SDJNwelcome_screen
 subquestion: |
+  
   This application displays a list of legal services provided in South Australia.
   Please answer the questions based on one singular legal issue. If you have multiple issues please repeat the process for each individual legal issue to find relevant services.
   
   This process is strictly anonymous and no personal data is collected from you.
-  If at any point you need to leave the application, there will be a button labelled *exit and hide*. This button will close the application down and take you to a weather site.
+  If at any point you need to leave the application, there will be a button labelled *Exit*. This button will close the application down and take you to a weather site.
   
-  
+
   
   Please note that this application does not provide any legal advice and if you are in need of immediate aid to use relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
   
-  
+
   
   Do you accept these terms?
 buttons:
@@ -150,8 +159,6 @@ columns:
   - Age Range: |
       'From {} to {}'.format(row_item['min_age'], row_item['max_age'])
 ---
-# Modify the post default screen part to attribute work to Flinders and your client
-# Remember to replace XXXX with your client's name.
 default screen parts:
   post: |
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
