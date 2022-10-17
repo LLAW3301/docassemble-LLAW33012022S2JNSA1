@@ -8,6 +8,10 @@ code: |
   set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 70px; alt=''">')
 ---
 features:
+  navigation back button: False
+  question back button: True
+  navigation: horizontal
+  progress bar: True
   css: SDJN_styles.css
   debug: False
   table width: 85
