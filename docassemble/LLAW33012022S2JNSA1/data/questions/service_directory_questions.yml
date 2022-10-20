@@ -5,7 +5,7 @@
 ---
 question: Location
 subquestion: |
-  Please select the location where you wish to see potential services in.
+  Please select the area(s) of Adelaide where you wish to find legal assistance.
   
   You may choose more then one location.
 fields:
@@ -20,7 +20,7 @@ fields:
 ---
 question: Age
 subquestion: |
-  Please select your age range.
+  How old are you?
 fields:
   - no label: SDJNage
     datatype: radio
@@ -30,11 +30,11 @@ fields:
       - 25-70
       - 70+
 ---
-question: Are you looking for a service that supports {families}?
+question: Do you want help from a service that supports {families}?
 fields:
   - no label: SDJNfamily
     datatype: yesnoradio
-  - Does your issue concern any of the below?: SDJNfamily_2
+  - Do you want help with any of the issues listed below?: SDJNfamily_2
     datatype: radio
     choices:
       - Divorce: div
@@ -44,11 +44,11 @@ fields:
       - My issue does not concern any of these: no
     show if: SDJNfamily
 ---
-question: Does your issue concern a criminal matter
+question: Do you want help with a criminal matter
 fields:
   - no label: SDJNcrim
     datatype: yesnoradio
-  - Does your issue concern any of the below?: SDJNcrim_2
+  - Do you want help with any of the crimincal issues listed below?: SDJNcrim_2
     datatype: radio
     choices:
       - Road offenes: RO_OF
@@ -57,13 +57,13 @@ fields:
       - My issue does not concern any of these: no
     show if: SDJNcrim
 under: |
-   If you are in immediate need of help or if an emergency is occuring please call the police on 000. Services pertaining to Criminal matters are only avaliable for minor crimes.
+   If you are in immediate need of help or if an emergency is occuring please call the police on 000. Services that help with Criminal matters are only avaliable for minor crimes.
 ---
-question: Does your issue concern {personal injury}?
+question: Do you want help with a {personal injury} matter?
 fields:
   - no label: SDJNPJ
     datatype: yesnoradio
-  - Does your issue concern any of the below?: SDJNPJ_2
+  - Do you want help with any of the issues listed below?: SDJNPJ_2
     datatype: radio
     choices:
       - Injury at my workplace: fault_my_workplace
@@ -76,11 +76,11 @@ fields:
       - My issue does not concern any of these:
     show if: SDJNPJ
 ---
-question: Does your issue concern {Courts or Dispute Resolution}?
+question: Do you want help with {Courts or Dispute Resolution}?
 fields:
   - no label: SDJNcourts
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNcourts_2
+  - Do you want help with any of the issues listed below?: SDJNcourts_2
     datatype: radio
     choices:     
       - Documentation: doc
@@ -92,11 +92,11 @@ fields:
       - My issue does not concern any of these: no
     show if: SDJNcourts
 ---
-question: Does your issue concern {Buisness or Employment}?
+question: Do you want help with a {Buisness or Employment} matter?
 fields:
   - no label: SDJNBUS
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNBUS_2
+  - Do you want help with any of the issues listed below?: SDJNBUS_2
     datatype: radio
     choices:     
       - Employment: empy
@@ -107,11 +107,11 @@ fields:
       - My issue does not concern any of these: no
     show if: SDJNBUS
 ---
-question: Does your issue concern {probate}?
+question: Do you want help with a {probate} matter?
 fields:
   - no label: SDJNprobate
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNprobate_2
+  - Do you want help with any of the issues listed below?: SDJNprobate_2
     datatype: radio
     choices:     
       - wills
@@ -120,11 +120,11 @@ fields:
       - My issue does not concern any of these
     show if: SDJNprobate
 ---
-question: Does your issue concern {Property}?
+question: Do you want help with a {Property} matter?
 fields:
   - no label: SDJNprop
     datatype: yesnoradio
-  - Does your issue concern any of the issues below?: SDJNprop_2
+  - Do you want help with any of the issues below?: SDJNprop_2
     datatype: radio
     choices:     
       - Trusts 
@@ -133,10 +133,10 @@ fields:
       - Leasing 
       - Selling property
       - Conveyancing
-      - My issue does not concern any of these
+      - My issue is not listed
     show if: SDJNprop
 ---
-question: Does your issue concern a different civil matter outlined below?
+question: Do you want help with a different civil matter outlined below?
 fields:
   - no label: SDJNcivil
     datatype: radio
@@ -144,9 +144,9 @@ fields:
       - Negligence: neg
       - Trespass: trp
       - Contract Breaches: CB
-      - My issue does not concern any of these: not_civil
+      - My issue is not listed: not_civil
 ---
-question: Does your issue concern any of the issues below?
+question: Do you want help with any of the issues listed below?
 fields:
   - no label: SDJNother
     datatype: radio
@@ -157,7 +157,7 @@ fields:
       - Homelessness: homeless
       - Race discrimination: RD
       - Human rights: HR
-      - My issue does not concern any of these: not_other
+      - My issue is not any of these: not_other
 ---
 Question: What gender do you identify as?
 fields: 
@@ -201,7 +201,7 @@ fields:
 under: |
   If you select *prefer not to say* you will not see any results specific to any gender orientation
 ---
-question: Have you ever used any services for your current legal issue?
+question: Have you ever gone to these legal assistance services for your current legal issue?
 fields:
  - no label: SDJNserv
    datatype: yesnoradio
@@ -236,9 +236,9 @@ fields:
 ---
 terms:
   families: |
-    Family refers to areas of law that affect family units including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see avaliable selections.
+    Family refers to areas of law that affect family units, including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see avaliable selections.
   personal injury: |
-    Personal injury refers to physical ailment occuring from an external force such as another person, surroundings, and other forms.
+    Personal injury refers to physical ailment occuring from an external force, such as another person, surroundings, and other forms.
   Courts or Dispute Resolution: |
     This refers to issues relating to the functions of courts including representation, documents, the ways courts function, and alternative forms of dispute resolution.
   Buisness or Employment: |
