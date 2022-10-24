@@ -240,9 +240,9 @@ data:
     website: lsc.sa.gov.au
   - service_name: "Environment Defenders Office"
     location:
-      - East
+      - Adelaide East
     issues:
-      - Environmental
+      - Environment
     age:
       - Adult
     gender:

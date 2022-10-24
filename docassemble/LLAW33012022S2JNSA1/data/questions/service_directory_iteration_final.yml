@@ -104,6 +104,7 @@ code: |
   #eligibility test
     if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok and SDJNDV_ok and SDJNserv_2_ok:
       if SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok or SDJNcrim_2_ok or SDJNprobate_2_ok or SDJNprop_2_ok or SDJNcivil_ok or SDJNPJ_2_ok or SDJNcourts_2_ok:
+        log("entering nested if statement")
         SDJNselected_services.append(SDJNa_service)
       
     

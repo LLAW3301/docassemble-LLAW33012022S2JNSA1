@@ -10,7 +10,7 @@ subquestion: |
   You may choose more then one location.
   Click the question icon to see specifics of each region.
   
-   If you are unsure of the relevant region, you can try browsing this map:
+  If you are unsure of the relevant region, you can try browsing this map:
    
   <div class="refusal-map-container">
   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248956.58478148535!2d138.68909503461902!3d-34.93047901614914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1620128217527!5m2!1sen!2sau" style="border:0;" allowfullscreen="" loading="lazy" class="refusal-map"></iframe>
@@ -77,10 +77,10 @@ fields:
   - no label: SDJNage
     datatype: radio
     choices:
-      - Under 16: child
-      - 16 to 18: youth
-      - 18 to 65: adult
-      - 65+: elder
+      - Under 16: Child
+      - 16 to 18: Youth
+      - 18 to 65: Adult
+      - 65+: Elder
 ---
 question: Are you looking for a service that supports {families}?
 fields:
@@ -91,7 +91,7 @@ fields:
     choices:
       - Divorce
       - Marriage
-      - Child Support
+      - Child support
       - Defacto relationships
       - Fostering
     show if: SDJNfamily
@@ -165,7 +165,7 @@ fields:
       - I have injured someone
     show if: SDJNPJ
 ---
-question: Does you need help with {courts or dispute resolution} matter?
+question: Do you need help with {courts or dispute resolution} matter?
 fields:
   - no label: SDJNcourts
     datatype: yesnoradio
@@ -208,7 +208,7 @@ fields:
     choices:     
       - Environment
       - LGBTQ+ issues
-      - Elder Rights
+      - Elder rights
       - Homelessness
       - Racial discrimination
       - Human rights
@@ -255,7 +255,7 @@ question: Have you ever used any free legal services before?
 fields:
  - no label: SDJNserv
    datatype: yesnoradio
- - Have you ever used any of these services? You may select more than one.: SDJNserv_2
+ - Have you ever used any of these services? You may select more than one: SDJNserv_2
    datatype: checkboxes
    choices:
      - "Aboriginal Family Violence Legal Service Inc"
