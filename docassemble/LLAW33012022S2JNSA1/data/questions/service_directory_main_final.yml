@@ -1,0 +1,224 @@
+---
+# Source for image used within header.
+objects:
+  - HeaderLogo: DAStaticFile.using(filename='JNSA_purplewhite_logo.png')
+---
+mandatory: true
+code: |
+  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 70px; alt=''">')
+---
+features:
+  navigation back button: False
+  question back button: True
+  css: SDJN_styles.css
+  debug: False
+  table width: 85
+---
+
+metadata:
+  show login: false
+  exit url: http://www.bom.gov.au
+  title: |
+    Service Directory JusticeNet SA
+  short title: |
+    Service Directory JusticeNet SA
+  description: |
+    A Service Directory App for JusticeNet SA
+  authors:
+    - name: Benjamin Wiersema
+    - name: Beti Waldron
+    - name: Lauren Docking
+    - name: Jewel-Lee Somerville
+    - name: Lachie Stiffle
+    - name: Zach Marshall
+  organisation: Flinders University
+---
+include: 
+  - service_directory_data_final.yml
+  - service_directory_iteration_final.yml
+  - service_directory_questions_final.yml
+---
+objects:
+  - SDJNselected_services: DAList.using(there_are_any=True, auto_gather=False)
+---
+mandatory: true
+code: |
+  SDJNdisplay_welcome_screen
+  
+  SDJNdisplay_confirm_answers
+  
+  SDJNdisplay_final_screen 
+---
+  
+code: |
+  SDJNdisplay_welcome_screen = True
+  force_ask('SDJNwelcome_screen')
+
+---
+question: Welcome to JusticeGuide SA
+event: SDJNwelcome_screen
+subquestion: |
+  JusticeGuide SA helps you find free legal providers in SA. It is designed: 
+  
+  - For people on a low income (earning **under $64,000** a year). If you are earning above this, you can find a lawyer on the [Law Society 'find me a lawyer' Page](https://www.lawsocietysa.asn.au/). 
+  - To assist with one legal issue at a time. If you have mutiple concerns, you can repeat the process for each issue. We recommend starting with your most urgent.
+  - To make sure no personal data is collected, so you will not be asked for your name or other personal details
+  - To help find a service, not to give legal advice.
+
+  Please note: For free legal advice over the phone, contact the LSC Legal Helpline on 1300 366 424 or visit [LSC](https://lsc.sa.gov.au/cb_pages/legal_advice.php). If you need urgent help, use the relevant [helplines](https://www.rasa.org.au/resources/crisis-help-support/).
+  
+  If at any point you need to leave the application for any reason, there will be a button labelled *Exit* that will take you to a weather site.
+  
+   
+buttons:
+  - Yes, I am a low-income earner: continue
+  - No, I am not a low-income earner: exit
+    url: https://www.lawsocietysa.asn.au/    
+---
+code: |
+  SDJNdisplay_confirm_answers = True
+  force_ask('SDJNconfirm_answers')
+---
+event: SDJNconfirm_answers
+question: Please check your answers
+subquestion: | 
+  
+  Question|Answer
+  ---|---
+  Locations Selected|${SDJNlocation.true_values()}
+  % if SDJNage == 'child':
+  Age Range|Under 16
+  % elif SDJNage == 'youth':
+  Age Range|16 to 18
+  % elif SDJNage == 'adult':
+  Age Range|18 to 65
+  % else:
+  Age Range|65+
+  % endif
+  % if SDJNfamily:
+  Family issue|${SDJNfamily_2.true_values()}
+  % else:
+  Family issue|No
+  % endif
+  % if SDJNcrim:
+  Criminal issue|${SDJNcrim_2.true_values()}
+  % else:
+  Criminal issue|No
+  % endif
+  % if SDJNprobate:
+  Probate issue|${SDJNprobate_2.true_values()}
+  % else:
+  Probate issue|No
+  % endif
+  % if SDJNprop:
+  Property issue|${SDJNprop_2.true_values()}
+  % else:
+  Property issue|No
+  % endif
+  % if SDJNcivil == 'Negligence':
+  Other civil issue|Negligence
+  % elif SDJNcivil == 'Trespass':
+  Other civil issue|Trespass
+  % elif SDJNcivil == 'Contract Breaches':
+  Other civil issue|Contract breaches
+  % else:
+  Other civil issues|no
+  % endif
+  % if SDJNPJ:
+  Personal Injury issue|${SDJNPJ_2.true_values()}
+  % else:
+  Personal Injury issue|No
+  % endif
+  % if SDJNcourts:
+  Courts or ADR issue|${SDJNcourts_2.true_values()}
+  % else:
+  Courts or ADR issue|No
+  % endif
+  % if SDJNBUS:
+  Buisness/employment issue|${SDJNBUS_2.true_values()}
+  % else:
+  Buisness/employment issue|No
+  % endif
+  % if SDJNother == 'env':
+  Other issue|Environment
+  % elif SDJNother == 'LGBT':
+  Other issue|LGBTQ+
+  % elif SDJNother == 'elder':
+  Other issue|Elder issues
+  % elif SDJNother == 'homeless':
+  Other issue|Homelessness
+  % elif SDJNother == 'RD':
+  Other issue|Race Discrimination
+  % elif SDJNother == 'HR':
+  Other issue|Human Rights
+  % else:
+  Other issue|No
+  % endif
+  % if SDJNATSI:
+  ATSI|${SDJNATSI}
+  % endif
+  % if SDJNDV == 'DV':
+  Domestic Violence?|Yes
+  % else:
+  Domestice Violence?|No
+  % endif
+  % if SDJNgender:
+  Gender|${SDJNgender}
+  % endif
+  % if SDJNserv:
+  Prior service use|${SDJNserv_2.true_values()}
+  % else:
+  Prior service|No
+  % endif
+
+buttons:
+  - continue: continue
+  - restart: restart
+  - Exit & hide: exit
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+---
+event: SDJNdisplay_final_screen
+question: Here is a list of services for which you are eligible. 
+subquestion: |
+
+  % if len(SDJNselected_services) > 0:
+  ${SDJNselected_services_table}
+  % else:
+  Unfortunately you are not eligible for any of the services based on your answers. Please use the following details to contact JusticeNet SA with your legal issue.
+  
+  JusticeNet SA|Details
+  -------------|-------
+  Website|[justice.org.au](https://www.justicenet.org.au/)
+  Email|admin@justicenet.org.au
+  Phone Number|08 8410 2280
+  Address|Pirie St, Adelaide SA 5000
+    
+  % endif
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
+---
+#need to have critera here which will drive the questions being asked 
+table: SDJNselected_services_table
+rows: SDJNselected_services
+columns:
+  - Service Name: |
+      row_item['service_name']
+  - Phone Number: |
+      row_item['phone_number']
+  - Website link: |
+      row_item['website']
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with JusticeNet SA
+    </i></small></cite>
+    </div>
+    </div>
+---

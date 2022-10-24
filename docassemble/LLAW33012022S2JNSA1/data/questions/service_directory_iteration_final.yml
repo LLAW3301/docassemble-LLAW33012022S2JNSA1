@@ -1,0 +1,111 @@
+---
+code: |
+  for SDJNa_service in SDJNservices:
+  #criteria tests
+  #age test (working) - was changed to a radio set up with child, youth, adult and elder tags for age ranges (this has been done so it is very clear that the application is anonymous)
+    if SDJNage in SDJNa_service['age']:
+      SDJNage_ok = True
+    else:
+      SDJNage_ok = False
+
+  #gender (working) - simple if statement - based on answers 
+    if SDJNgender in SDJNa_service['gender']:
+      SDJNgender_ok = True
+    else:
+      SDJNgender_ok = False
+      
+  #Location (working) - checkbox system
+    SDJNlocation_ok = False
+    SDJNlocation_used = SDJNlocation.true_values()
+    for SDJNa_location in SDJNlocation.true_values():
+      if SDJNa_location in SDJNa_service['location']:
+        SDJNlocation_ok = True
+  
+  #ATSI (working)
+    if SDJNATSI in SDJNa_service['ATSI']:
+      SDJNATSI_ok = True
+    else:
+      SDJNATSI_ok = False
+  
+  #Domestic violence test (working)
+    if SDJNDV in SDJNa_service['Domestic Violence']:
+      SDJNDV_ok = True
+    else:
+      SDJNDV_ok = False
+            
+  #Family Client test (checkbox system functional)
+    SDJNfamily_2_ok = False
+    if SDJNfamily:
+      for SDJNa_family_2 in SDJNfamily_2.true_values():
+        if SDJNa_family_2 in SDJNa_service['issues']:
+          SDJNfamily_2_ok = True
+ 
+  #prior service use test 
+    SDJNserv_2_ok = True
+    if SDJNserv:
+      for SDJNa_serv_2 in SDJNserv_2.true_values():
+        if SDJNa_serv_2 in SDJNa_service['service_name']:
+          SDJNserv_2_ok = False
+   
+   #buisness test
+    SDJNBUS_2_ok = False
+    if SDJNBUS:
+      for SDJNa_BUS_2 in SDJNBUS_2.true_values():
+        if SDJNa_BUS_2 in SDJNa_service['issues']:
+          SDJNBUS_2_ok = True
+
+  #other misc test
+    if SDJNother in SDJNa_service['issues']:
+      SDJNother_ok = True
+    else:
+      SDJNother_ok = False
+
+   #criminal test
+    SDJNcrim_2_ok = False
+    if SDJNcrim:
+      for SDJNa_crim_2 in SDJNcrim_2.true_values():
+        if SDJNa_crim_2 in SDJNa_service['issues']:
+          SDJNcrim_2_ok = True
+
+   #probate test
+    SDJNprobate_2_ok = False
+    if SDJNprobate:
+      for SDJNa_probate_2 in SDJNprobate_2.true_values():
+        if SDJNa_probate_2 in SDJNa_service['issues']:
+          SDJNprobate_2_ok = True
+
+   #property test
+    SDJNprop_2_ok = False
+    if SDJNprop:
+      for SDJNa_prop_2 in SDJNprop_2.true_values():
+        if SDJNa_prop_2 in SDJNa_service['issues']:
+          SDJNprop_2_ok = True
+          
+    #other civil test - simple based off gender test
+    if SDJNcivil in SDJNa_service['issues']:
+      SDJNcivil_ok = True
+    else:
+      SDJNcivil_ok = False
+
+   #personal injury test
+    SDJNPJ_2_ok = False
+    if SDJNPJ:
+      for SDJNa_PJ_2 in SDJNPJ_2.true_values():
+        if SDJNa_PJ_2 in SDJNa_service['issues']:
+          SDJNPJ_2_ok = True
+
+   #courts/adr test
+    SDJNcourts_2_ok = False
+    if SDJNcourts:
+      for SDJNa_courts_2 in SDJNcourts_2.true_values():
+        if SDJNa_courts_2 in SDJNa_service['issues']:
+          SDJNcourts_2_ok = True
+
+  #eligibility test
+    if SDJNage_ok and SDJNgender_ok and SDJNlocation_ok and SDJNATSI_ok and SDJNDV_ok and SDJNserv_2_ok:
+      if SDJNother_ok or SDJNfamily_2_ok or SDJNBUS_2_ok or SDJNcrim_2_ok or SDJNprobate_2_ok or SDJNprop_2_ok or SDJNcivil_ok or SDJNPJ_2_ok or SDJNcourts_2_ok:
+        SDJNselected_services.append(SDJNa_service)
+      
+    
+  SDJNselected_services.gathered = True
+---

@@ -1,0 +1,306 @@
+---
+#questions that will supply data
+#tagging system will need to be applied to services e.g. services for domestic violence tagged DV etc
+#using event end screens?
+---
+question: Location
+subquestion: |
+  Please select the area(s) of Adelaide where you are seeking legal help.
+  
+  You may choose more then one location.
+  Click the question icon to see specifics of each region.
+  
+   If you are unsure of the relevant region, you can try browsing this map:
+   
+  <div class="refusal-map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248956.58478148535!2d138.68909503461902!3d-34.93047901614914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1620128217527!5m2!1sen!2sau" style="border:0;" allowfullscreen="" loading="lazy" class="refusal-map"></iframe>
+  </div>
+  
+
+fields:
+  - no label: SDJNlocation
+    datatype: checkboxes
+    choices: 
+      - Central Adelaide: Central Adelaide
+        help: | 
+          - Adelaide
+          - Parkside 
+          - Unley
+          - Norwood
+          - Prospect
+          - Burnside
+      - Adelaide North: Adelaide North
+        help: | 
+          - Bowden
+          - Thebarton
+          - North Adelaide
+          - Hackney
+          - Gilberton
+      - Adelaide South: Adelaide South
+        help: | 
+          - Woodville South
+          - Woodcroft
+          - Happy Valley
+      - Adelaide East: Adelaide East 
+        help: | 
+          - Aldgate
+          - Bridgewater 
+          - Athelstone
+          - Magill
+          - Lobethal
+          - Crafers
+      - Adelaide West: Adelaide West
+        help: | 
+          - Brighton
+          - Glenelg
+          - O'Halloran Hill
+          - Sturt
+          - Glengowrie
+          - Somerton Park
+      - Country North: Country North
+        help: | 
+          - Munno Para
+          - Smithfield Plains
+          - Salisbury
+          - Mawson Lakes
+      - Country South: Country South
+        help: | 
+          - Christie's Beach
+          - McLaren Vale
+          - Mount Gambier
+          - Aldinga
+---
+question: Age
+subquestion: |
+  Please select your age category.
+fields:
+  - no label: SDJNage
+    datatype: radio
+    choices:
+      - Under 16: child
+      - 16 to 18: youth
+      - 18 to 65: adult
+      - 65+: elder
+---
+question: Are you looking for a service that supports {families}?
+fields:
+  - no label: SDJNfamily
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNfamily_2
+    datatype: checkboxes
+    choices:
+      - Divorce
+      - Marriage
+      - Child Support
+      - Defacto relationships
+      - Fostering
+    show if: SDJNfamily
+---
+question: Do you need help with a criminal matter?
+fields:
+  - no label: SDJNcrim
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNcrim_2
+    datatype: checkboxes
+    choices:
+      - Road offences
+      - Minor crimes
+      - Victims of crime
+      - Assault
+    show if: SDJNcrim
+under: |
+   If you are in immediate need of help or if an emergency is occuring please call the police on 000. Services pertaining to criminal matters are only avaliable for minor crimes.
+---
+question: Do you need help with a {probate} matter?
+fields:
+  - no label: SDJNprobate
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNprobate_2
+    datatype: checkboxes
+    choices:     
+      - Wills
+      - Executors 
+      - Deceased estate
+    show if: SDJNprobate
+---
+question: Does your issue concern a {property} matter?
+fields:
+  - no label: SDJNprop
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNprop_2
+    datatype: checkboxes
+    choices:     
+      - Trusts 
+      - Housing 
+      - Personal property
+      - Leasing 
+      - Selling property
+      - Conveyancing
+      - Rent
+    show if: SDJNprop
+---
+question: Do you need help with a different civil matter listed below?
+fields:
+  - no label: SDJNcivil
+    datatype: radio
+    choices:    
+      - Negligence
+      - Trespass
+      - Contract issues
+      - My issue is not listed: No
+---
+question: Does your need advice regarding a {personal injury}?
+fields:
+  - no label: SDJNPJ
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNPJ_2
+    datatype: checkboxes
+    choices:
+      - Injury at my workplace
+      - Injury at another workplace
+      - Injury at hands of another
+      - Injury from a product
+      - Medical malpractice
+      - Accidental injury
+      - I have injured someone
+    show if: SDJNPJ
+---
+question: Does you need help with {courts or dispute resolution} matter?
+fields:
+  - no label: SDJNcourts
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNcourts_2
+    datatype: checkboxes
+    choices:     
+      - Documentation
+      - Self representation
+      - Court help
+      - Mediation
+      - Pro bono representation
+      - Alternative Dispute Resolution
+      - Centrelink appeals
+      - Central Assessment Unit appeals
+      - Department for Child Protection appeals
+    show if: SDJNcourts
+---
+question: Do you need help with a {business or employment} matter?
+fields:
+  - no label: SDJNBUS
+    datatype: yesnoradio
+  - Do you need help with any of these issues?: SDJNBUS_2
+    datatype: checkboxes
+    choices:     
+      - Employment
+      - Shareholders
+      - Directors
+      - Selling business
+      - Workers rights
+      - Credit
+      - Business structure
+      - Intellectual property
+      - Taxation
+    show if: SDJNBUS
+---
+question: Do you need help with any of these issues?
+fields:
+  - no label: SDJNother
+    datatype: radio
+    choices:     
+      - Environment
+      - LGBTQ+ issues
+      - Elder Rights
+      - Homelessness
+      - Racial discrimination
+      - Human rights
+      - Disability
+      - Intervention orders
+      - Child protection matters
+      - Sexual harassment
+      - Equal opportunity
+      - Refugee issues
+      - My issue is not listed: No
+---
+Question: Do you identify as Aboriginal or Torres Strait Islander (ATSI) ?
+fields: 
+  - no label: SDJNATSI
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+question: Are you looking for a {domestic violence} service?
+fields:
+  - no label: SDJNDV
+    datatype: radio
+    choices:
+      - I am seeking domestic violence services: Yes
+      - I am not seeking domestic violence services: No
+under: |
+   Examples of domestic violence are listed [here](https://www.voc.sa.gov.au/the-crime/types-of-crime/domestic-and-family-violence). If you urgently need domestic violence support, please call the Domestic Violence Crisis Line at 1800 800 098
+---
+question: What {gender} do you identify as?
+fields:
+  - no label: SDJNgender
+    datatype: radio
+    choices:
+      - Female
+      - Male
+      - Nonbinary
+      - Other
+      - Prefer not to say
+under: |
+  If you select *prefer not to say* your results will not be gender specific
+---
+question: Have you ever used any free legal services before?
+fields:
+ - no label: SDJNserv
+   datatype: yesnoradio
+ - Have you ever used any of these services? You may select more than one.: SDJNserv_2
+   datatype: checkboxes
+   choices:
+     - "Aboriginal Family Violence Legal Service Inc"
+     - "Aboriginal Legal Rights Movement"
+     - "Adelaide University Administrative Appeals Legal Advice Service"
+     - "Adelaide University Entrepreneur and Venture Advice Clinic"
+     - "Adelaide University Equal Opportunity Legal Advice Service"
+     - "Adelaide University Magistrates Court Legal Advice Service"
+     - "Consumer Credit Law Centre SA"
+     - "Environment Defenders Office"
+     - "Family Violence Legal service Aboriginal Corporation"
+     - "Flinders Legal Centre"
+     - "Legal Services Commission"
+     - "Limestone Coast Community Justice Centre"
+     - "Northern Community Legal Service"
+     - "The Refugee Advocacy Service of South Australia"
+     - "RentRight SA"
+     - "Riverland Community Justice Centre"
+     - "Southern Community Justice Centre"
+     - "UniSA Legal Advice Clinic"
+     - "Uniting Communities Law Centre"
+     - "WestSide Lawyers Inc"
+     - "Women's Legal Service SA"
+     - "Workers Compensation Service"
+     - "Working Women's Centre SA"
+     - "Young Workers Legal Service"
+   show if: SDJNserv    
+---
+terms:
+  families: |
+    Family law refers to areas of law that affect family units including issues such as child support, divorce, defacto relationships, marriage, family violence and other issues. Select yes if you are unsure to see the areas of family law assistance.
+  personal injury: |
+    Personal injury refers to physical ailment occuring from an external force such as another person, surroundings, and other forms.
+  courts or dispute resolution: |
+    This refers to issues relating to the functions of courts including representation, documents, the ways courts function, and alternative forms of dispute resolution.
+  business or employment: |
+    This includes workplace issues for both employees, buisness owners, and shareholders.
+  probate: |
+   Referring to wills and estates of the deceased.
+  property: |
+   Property issues address legally protected claims to a variety of things including: houses, personal items and tusts.
+  Prefer not to say: |
+   If selected no services specific to gender will appear.
+  domestic violence: |
+    Domestic violence is a pattern of abusive behaviour by one person against another, within a marriage, dating couple, or within a family across generations.
+  gender: |
+    Gender refers to your perception of yourself in relation to characteristics and societal perception.
+---
